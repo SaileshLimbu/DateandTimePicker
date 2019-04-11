@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
                 DatePickerDialog datePicker = new DatePickerDialog(this, this, year, month, day);
+                datePicker.getDatePicker().setMinDate(calendar.getTimeInMillis());
+                datePicker.getDatePicker().setMaxDate(calendar.getTimeInMillis() + 169200000);
                 datePicker.show();
                 break;
             case R.id.tvTime:
